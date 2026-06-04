@@ -1,0 +1,30 @@
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(2.5rem, 5vw, 4rem) var(--px) clamp(1.25rem, 2.5vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.label {
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--terra);
+  flex-shrink: 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.info {
+  font-size: .58rem;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  flex-shrink: 0;
+}
