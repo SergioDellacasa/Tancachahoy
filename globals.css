@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Manrope:wght@300;400;500;600&display=swap');
+
+/* ══════════════════════════════════════════
+   TOKENS DE DISEÑO
+══════════════════════════════════════════ */
+:root {
+  /* Paleta base */
+  --ink:       #1A1410;
+  --ink-mid:   #4A3F35;
+  --ink-soft:  #8A7D72;
+  --dust:      #F2EBE0;
+  --cream:     #FAF7F2;
+  --paper:     #FFFFFF;
+  --terra:     #8B3A2A;
+  --terra-d:   #6B2C1E;
+  --terra-l:   #C0614D;
+  --sand:      #C9A87A;
+  --sand-l:    #E8D5B5;
+  --void:      #0C0905;
+  --line:      rgba(26,20,16,.1);
+  --line-dark: rgba(255,255,255,.1);
+
+  /* Tipografía */
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'Manrope', system-ui, -apple-system, sans-serif;
+
+  /* Espaciado */
+  --px:    clamp(1.25rem, 5vw, 5rem);
+  --py:    clamp(4rem, 8vw, 8rem);
+  --py-sm: clamp(2.5rem, 5vw, 5rem);
+
+  /* Máximo contenido */
+  --max: 1200px;
+}
+
+/* ══════════════════════════════════════════
+   RESET
+══════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: var(--sans); }
+
+/* ══════════════════════════════════════════
+   LAYOUT HELPERS
+══════════════════════════════════════════ */
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+.section {
+  padding: var(--py) var(--px);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.section--sm {
+  padding: var(--py-sm) var(--px);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.full-bleed {
+  width: 100%;
+}
+
+/* ══════════════════════════════════════════
+   TIPOGRAFÍA EDITORIAL
+══════════════════════════════════════════ */
+.t-display {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 900;
+  line-height: .9;
+  letter-spacing: -.04em;
+}
+
+.t-display-sm {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+.t-title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.t-title-sm {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.25;
+}
+
+.t-overline {
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.t-caption {
+  font-size: .72rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.t-body {
+  font-size: .88rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--ink-mid);
+}
+
+.t-mono {
+  font-family: 'Playfair Display', serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ══════════════════════════════════════════
+   SECTION RULE (separador editorial)
+══════════════════════════════════════════ */
+.sec-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(2.5rem, 5vw, 4rem) var(--px) clamp(1.5rem, 3vw, 2rem);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.sec-rule__label {
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--terra);
+  flex-shrink: 0;
+}
+
+.sec-rule__line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.sec-rule__info {
+  font-size: .58rem;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
+   BOTONES
+══════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 11px 24px;
+  border: none;
+  transition: all .2s;
+}
+
+.btn--primary {
+  background: var(--terra);
+  color: var(--paper);
+}
+.btn--primary:hover {
+  background: var(--terra-d);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn--outline:hover {
+  border-color: var(--terra);
+  color: var(--terra);
+}
+
+.btn--ghost-light {
+  background: transparent;
+  color: rgba(255,255,255,.6);
+  border: 1px solid rgba(255,255,255,.15);
+}
+.btn--ghost-light:hover {
+  color: var(--paper);
+  border-color: rgba(255,255,255,.4);
+}
+
+/* ══════════════════════════════════════════
+   SKELETON LOADER
+══════════════════════════════════════════ */
+.sk {
+  background: linear-gradient(
+    90deg,
+    var(--sand-l) 25%,
+    var(--dust) 50%,
+    var(--sand-l) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.sk--dark {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.06) 25%,
+    rgba(255,255,255,.12) 50%,
+    rgba(255,255,255,.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ══════════════════════════════════════════
+   REVEAL ANIMATION
+══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
